@@ -1,26 +1,31 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-paper: #ffffff;
+  --color-ink: #14141a;
+  --color-chrome: #ffd43b;
+  --color-cobalt: #2b50e8;
+  --color-coral: #ff6b57;
+  --color-sidewalk: #f2f2ee;
+  --color-sidewalk-deep: #e2e2dc;
+  --color-muted: #5a5a66;
+  --color-muted-light: #a9a9b4;
+  --color-cobalt-tint: #e6ecff;
+  --color-cobalt-mist: #dce3ff;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-bricolage);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* Small caps-style labels used across both pages */
+@utility label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
