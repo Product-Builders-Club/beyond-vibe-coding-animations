@@ -24,8 +24,8 @@ creating a plan). It just changes instantly, without motion.
 
 Install these once on your computer:
 
-- **[Node.js](https://nodejs.org)** (version 20.9 or newer). Download the
-  "LTS" installer and run it. npm comes with it.
+- **[Node.js](https://nodejs.org)** (version 22.13.0 or newer, required by
+  Motion Studio). Download the "LTS" installer and run it. npm comes with it.
 - **Git.** On a Mac, it's usually already there. If not, your Mac will offer
   to install it the first time it's needed. On Windows, install it from
   [git-scm.com](https://git-scm.com).
@@ -39,6 +39,12 @@ Install these once on your computer:
 3. **Paste this prompt** and send it:
 
    ```text
+   Before setting up the project, check the installed Node.js version with
+   node --version. This project requires Node.js 22.13.0 or newer. Keep an
+   existing installation if it meets that minimum. If Node.js is missing
+   or older, help me install or upgrade it, then verify the version again
+   before continuing.
+
    Clone https://github.com/Product-Builders-Club/beyond-vibe-coding-animations.git
    directly into this folder (not into a new subfolder), then install the
    dependencies with npm. When that's done, start the dev server and show
@@ -54,11 +60,22 @@ That's it. From here, you can ask Claude to start adding animations.
 ### Or set it up yourself in a terminal
 
 If you're comfortable with the command line, run these from inside an empty
-folder. The `.` at the end clones into the current folder:
+folder. The version check requires Node.js 22.13.0 or newer and stops setup
+if your version is too old. If Node.js is missing or the check fails, install
+or upgrade Node.js, then run these commands again. The `.` at the end clones
+into the current folder:
 
 ```bash
-git clone https://github.com/Product-Builders-Club/beyond-vibe-coding-animations.git .
-npm install
+node -e '
+const [major, minor] = process.versions.node.split(".").map(Number);
+if (major < 22 || (major === 22 && minor < 13)) {
+  console.error("Node.js 22.13.0 or newer is required. Update Node.js and try again.");
+  process.exit(1);
+}
+console.log("Node.js " + process.versions.node + " is ready.");
+' &&
+git clone https://github.com/Product-Builders-Club/beyond-vibe-coding-animations.git . &&
+npm install &&
 npm run dev
 ```
 
