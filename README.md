@@ -20,30 +20,51 @@ creating a plan). It just changes instantly, without motion.
 
 ## Getting started
 
-You'll need [Node.js](https://nodejs.org) 20.9 or newer and npm.
+### Before you begin
 
-1. **Clone the repo**
+Install these once on your computer:
 
-   ```bash
-   git clone <your-repo-url> hopscotch-animations
-   cd hopscotch-animations
+- **[Node.js](https://nodejs.org)** (version 20.9 or newer). Download the
+  "LTS" installer and run it. npm comes with it.
+- **Git.** On a Mac, it's usually already there. If not, your Mac will offer
+  to install it the first time it's needed. On Windows, install it from
+  [git-scm.com](https://git-scm.com).
+- **[Claude Code Desktop](https://claude.com/download)**
+
+### Set up the project with Claude Code
+
+1. **Create a new, empty folder** anywhere on your computer, for example
+   `animations-workshop`.
+2. **Open that folder in Claude Code Desktop.**
+3. **Paste this prompt** and send it:
+
+   ```text
+   Clone https://github.com/Product-Builders-Club/beyond-vibe-coding-animations.git
+   directly into this folder (not into a new subfolder), then install the
+   dependencies with npm. When that's done, start the dev server and show
+   me the site.
    ```
 
-2. **Install dependencies**
+4. Claude will download the project, install everything and start the site.
+   You'll see the landing page, and the app lives at `/plans` (for example
+   [http://localhost:3000/plans](http://localhost:3000/plans)).
 
-   ```bash
-   npm install
-   ```
+That's it. From here, you can ask Claude to start adding animations.
 
-3. **Start the dev server**
+### Or set it up yourself in a terminal
 
-   ```bash
-   npm run dev
-   ```
+If you're comfortable with the command line, run these from inside an empty
+folder. The `.` at the end clones into the current folder:
 
-4. Open [http://localhost:3000](http://localhost:3000) for the landing page
-   and [http://localhost:3000/plans](http://localhost:3000/plans) for the app.
-   Pages reload automatically as you edit.
+```bash
+git clone https://github.com/Product-Builders-Club/beyond-vibe-coding-animations.git .
+npm install
+npm run dev
+```
+
+Then open [http://localhost:3000](http://localhost:3000) for the landing page
+and [http://localhost:3000/plans](http://localhost:3000/plans) for the app.
+Pages reload automatically as you edit.
 
 ### Other scripts
 
