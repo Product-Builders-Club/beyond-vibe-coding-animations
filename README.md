@@ -24,7 +24,7 @@ creating a plan). It just changes instantly, without motion.
 
 Install these once on your computer:
 
-- **[Node.js](https://nodejs.org)** (version 20.9 or newer). Download the
+- **[Node.js](https://nodejs.org)** (version 22.13.0 or newer). Download the
   "LTS" installer and run it. npm comes with it.
 - **Git.** On a Mac, it's usually already there. If not, your Mac will offer
   to install it the first time it's needed. On Windows, install it from
